@@ -5,28 +5,28 @@ import org.openqa.selenium.WebElement;
 import Constant.Constant;
 
 public class LoginPage extends GeneralPage{
-    private final By _txtUsername = By.xpath("//input[@id='username']");
-    private final By _txtPassword = By.xpath("//input[@id='password']");
-    private final By _btnLogin = By.xpath("//input[@value='login']");
+    private final By usernameField = By.xpath("//input[@id='username']");
+    private final By passwordField = By.xpath("//input[@id='password']");
+    private final By buttonLogin = By.xpath("//input[@value='login']");
 //    private final By _lblLoginErrorMsg = By.xpath("//p[@class='message error LoginForm']");
 
-    public WebElement getTxtUsername(){
-        return Constant.WEBDRIVER.findElement(_txtUsername);
+    public WebElement getUsername(){
+        return Constant.WEBDRIVER.findElement(usernameField);
     }
-    public WebElement getTxtPassword(){
-        return Constant.WEBDRIVER.findElement(_txtPassword);
+    public WebElement getPassword(){
+        return Constant.WEBDRIVER.findElement(passwordField);
     }
-    public WebElement getBtnLogin(){
-        return Constant.WEBDRIVER.findElement(_btnLogin);
+    public WebElement getButtonLogin(){
+        return Constant.WEBDRIVER.findElement(buttonLogin);
     }
 //    public WebElement getLblLoginErrorMsg(){
 //        return Constant.WEBDRIVER.findElement(_lblLoginErrorMsg);
 //    }
 
     public HomePage login(String username, String password){
-        this.getTxtUsername().sendKeys(username);
-        this.getTxtPassword().sendKeys(password);
-        this.getBtnLogin().click();
+        this.getUsername().sendKeys(username);
+        this.getPassword().sendKeys(password);
+        this.getButtonLogin().click();
 //        this.getLblLoginErrorMsg().getText();
 
         return new HomePage();

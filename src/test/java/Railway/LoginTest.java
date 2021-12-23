@@ -9,6 +9,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class LoginTest {
+
+    //common method
+    HomePage homePage = new HomePage();
+    LoginPage loginPage;
+
     @BeforeMethod
     public void beforeMethod(){
         System.out.println("Pre-condition");
@@ -19,20 +24,71 @@ public class LoginTest {
     @AfterMethod
     public void afterMethod(){
         System.out.println("Post-condition");
-        Constant.WEBDRIVER.quit();
+//        Constant.WEBDRIVER.quit();
     }
 
     @Test
-    public void TC001(){
-        System.out.println("TC001 - User can login");
-        HomePage homePage = new HomePage();
+    public void TC01(){
+        System.out.println("TC001 - User can login with valid account");
         homePage.open();
 
-        LoginPage loginPage = homePage.gotoLoginPage();
+        loginPage = homePage.gotoLoginPage();
 
         String actualMsg = loginPage.login(Constant.USERNAME, Constant.PASSWORD).getWelcomeMessage();
         String expectedMsg = "Welcome " + Constant.USERNAME;
 
         Assert.assertEquals(actualMsg, expectedMsg, "Message");
     }
+
+    @Test
+    public void TC02(){
+        System.out.println("TC002 - User can not login with blank 'Username' textbox");
+        homePage.open();
+
+        loginPage = homePage.gotoLoginPage();
+
+        String actualMsg = loginPage.login("", Constant.PASSWORD).getErrorWelcomeMessage();
+        String expectedMsg = "You must specify a username.";
+
+        Assert.assertEquals(actualMsg, expectedMsg, "Message");
+    }
+
+    @Test
+    public void TC03(){
+        System.out.println("User cannot log into Railway with invalid password");
+        homePage.open();
+
+        loginPage = homePage.gotoLoginPage();
+
+        String actualMsg = loginPage.login(Constant.USERNAME, Constant.INVALID_PASSWORD).getErrorInvalidPassword();
+        String expectedMsg = "Invalid username or password. Please try again.";
+
+        Assert.assertEquals(actualMsg, expectedMsg, "Message");
+    }
+
+    @Test
+    public void TC04(){
+        System.out.println("Use is redirected to Book ticket page after logging in");
+        homePage.open().gotoBookTicketPage().gotoLoginPage().login(Constant.USERNAME, Constant.PASSWORD).gotoBookTicketPage();
+    }
+
+    @Test
+    public void TC05(){
+        System.out.println("User login wrong password several time");
+        homePage.open();
+
+    }
+
+    @Test
+    public void TC06(){
+        System.out.println("User is redirected to Home page after logging out");
+        homePage.open();
+
+        loginPage = homePage.gotoLoginPage();
+
+        loginPage.login(Constant.USERNAME, Constant.PASSWORD);
+        loginPage.gotoHome();
+
+    }
+
 }
