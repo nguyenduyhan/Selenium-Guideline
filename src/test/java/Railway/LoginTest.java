@@ -70,15 +70,14 @@ public class LoginTest {
     @Test
     public void TC04(){
         System.out.println("Use is redirected to Book ticket page after logging in");
-//        homePage.open().gotoBookTicketPage().gotoLoginPage().login(Constant.USERNAME, Constant.PASSWORD).gotoBookTicketPage();
-        BookTicketPage bookTicketPage = new BookTicketPage();
 
-        String actualMsg = bookTicketPage.gotoBookTicket().gotoBookTicketPage().gotoLoginPage()
-                .loginn(Constant.USERNAME, Constant.PASSWORD)
-                .getBookTicketTitleRedirect();
-        String expectedMsg = "Book Ticket Page";
+        String actualMsg = homePage.open().gotoBookTicketPage().gotoLoginPage()
+                .loginBookTicket(Constant.USERNAME, Constant.PASSWORD)
+                .gotoBookTicketPage().getBookTicketTitleRedirect();
+        String expectedMsg = "Book ticket";
 
         Assert.assertEquals(actualMsg, expectedMsg, "Message");
+
     }
 
     @Test
