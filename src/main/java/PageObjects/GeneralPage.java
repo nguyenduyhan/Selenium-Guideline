@@ -11,6 +11,8 @@ public class GeneralPage {
     private final By welcomeMessage = By.xpath("//div[@class='account']/strong");
     private final By usernameLeftBlank = By.xpath("//label[contains(text(),'You must specify a username.')]");
     private final By invalidPasswordError = By.xpath("//p[contains(text(),'Invalid username or password. Please try again.')]");
+    private final By backToHome = By.xpath("//h1[contains(text(),'Welcome to Safe Railway')]");
+    private final By bookTicketTitle = By.xpath("//div//h1[contains(text(), 'Book ticket')]");
 
     protected WebElement getTabLogin(){
         return Constant.WEBDRIVER.findElement(tabLogin);
@@ -30,6 +32,8 @@ public class GeneralPage {
     protected WebElement getInvalidPassword(){
         return Constant.WEBDRIVER.findElement(invalidPasswordError);
     }
+    protected WebElement getHomeTitle(){return Constant.WEBDRIVER.findElement(backToHome);};
+    protected WebElement getBookTitle(){return Constant.WEBDRIVER.findElement(bookTicketTitle);}
 
 
     public String getWelcomeMessage(){
@@ -41,6 +45,8 @@ public class GeneralPage {
     public String getErrorInvalidPassword(){
         return this.getInvalidPassword().getText();
     }
+    public String getHomeTitleLogout(){return this.getHomeTitle().getText();};
+    public String getBookTicketTitleRedirect(){return this.getBookTitle().getText();}
 
     public LoginPage gotoLoginPage(){
         this.getTabLogin().click();

@@ -32,4 +32,12 @@ public class LoginPage extends GeneralPage{
         return new HomePage();
     }
 
+    public BookTicketPage loginn(String username, String password){
+        this.getUsername().sendKeys(username);
+        this.getPassword().sendKeys(password);
+        this.getButtonLogin().click();
+
+        return new BookTicketPage();
+    }
+
 }

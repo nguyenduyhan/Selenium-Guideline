@@ -1,4 +1,5 @@
 package Railway;
+import PageObjects.BookTicketPage;
 import PageObjects.HomePage;
 import PageObjects.LoginPage;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,7 +25,7 @@ public class LoginTest {
     @AfterMethod
     public void afterMethod(){
         System.out.println("Post-condition");
-//        Constant.WEBDRIVER.quit();
+        Constant.WEBDRIVER.quit();
     }
 
     @Test
@@ -69,13 +70,32 @@ public class LoginTest {
     @Test
     public void TC04(){
         System.out.println("Use is redirected to Book ticket page after logging in");
-        homePage.open().gotoBookTicketPage().gotoLoginPage().login(Constant.USERNAME, Constant.PASSWORD).gotoBookTicketPage();
+//        homePage.open().gotoBookTicketPage().gotoLoginPage().login(Constant.USERNAME, Constant.PASSWORD).gotoBookTicketPage();
+        BookTicketPage bookTicketPage = new BookTicketPage();
+
+        String actualMsg = bookTicketPage.gotoBookTicket().gotoBookTicketPage().gotoLoginPage()
+                .loginn(Constant.USERNAME, Constant.PASSWORD)
+                .getBookTicketTitleRedirect();
+        String expectedMsg = "Book Ticket Page";
+
+        Assert.assertEquals(actualMsg, expectedMsg, "Message");
     }
 
     @Test
     public void TC05(){
         System.out.println("User login wrong password several time");
         homePage.open();
+        for (int i = 0; i <= 3; i++){
+            loginPage = homePage.gotoLoginPage();
+            loginPage.login(Constant.USERNAME, Constant.INVALID_PASSWORD);
+
+        }
+        String actualMsg = loginPage.getErrorInvalidPassword();
+        String expectedMsg = "You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes";
+
+        Assert.assertEquals(actualMsg, expectedMsg, "Message");
+
+
 
     }
 
@@ -87,7 +107,11 @@ public class LoginTest {
         loginPage = homePage.gotoLoginPage();
 
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
-        loginPage.gotoHome();
+        String actualMsg = loginPage.gotoHome().getHomeTitleLogout();
+//        loginPage.gotoHome();
+        String expectedMsg = "Welcome to Safe Railway";
+
+        Assert.assertEquals(actualMsg, expectedMsg, "Message");
 
     }
 
