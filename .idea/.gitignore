@@ -1,8 +1,8 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-.idea/vcs.xml
-.idea/misc.xml
-.idea/compiler.xml
-.idea/jarRepositories.xml
-.idea/uiDesigner.xml
+/vcs.xml
+/misc.xml
+/compiler.xml
+/jarRepositories.xml
+/uiDesigner.xml
