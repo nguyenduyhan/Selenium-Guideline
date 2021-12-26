@@ -1,19 +1,22 @@
 package Railway;
 
-import Constant.Constant;
+import Common.Constant;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC06 extends BeforeAfter{
-    @Test
+public class TC06 extends TestBase {
+    @Test(description = "User is redirected to Home page after logging out")
     public void TC06(){
-        System.out.println("User is redirected to Home page after logging out");
+        System.out.println("Step 1: Navigate to Home");
         homePage.open();
+        homePage.gotoLoginPage();
 
-        loginPage = homePage.gotoLoginPage();
-
+        System.out.println("Step 2: Login");
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
-        String actualMsg = loginPage.gotoHome().getHomeTitleLogout();
+
+        System.out.println("Step 3: Verify check point");
+        homePage.gotoHome();
+        String actualMsg = homePage.getHomeTitleLogout();
         String expectedMsg = "Welcome to Safe Railway";
 
         Assert.assertEquals(actualMsg, expectedMsg, "Message");

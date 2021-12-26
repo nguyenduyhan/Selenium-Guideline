@@ -1,10 +1,9 @@
 package PageObjects;
 
-import Constant.Constant;
+import Common.Constant;
 
-public class BookTicketPage extends GeneralPage {
-    public BookTicketPage bookTicket(){
-        Constant.WEBDRIVER.navigate().to(Constant.BOOK_TICKET_PAGE);
-        return this;
+public class BookTicketPage {
+    public String getTitleBookTicket(){
+        return Constant.WEBDRIVER.getTitle();
     }
 }

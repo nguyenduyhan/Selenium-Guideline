@@ -2,7 +2,7 @@ package PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import Constant.Constant;
+import Common.Constant;
 
 public class GeneralPage {
     private final By tabLogin = By.xpath("//div[@id='menu']//a[@href='/Account/Login.cshtml']");
@@ -48,31 +48,15 @@ public class GeneralPage {
     public String getHomeTitleLogout(){return this.getHomeTitle().getText();};
     public String getBookTicketTitleRedirect(){return this.getBookTitle().getText();}
 
-    public LoginPage gotoLoginPage(){
+    public void gotoLoginPage(){
         this.getTabLogin().click();
-        return new LoginPage();
     }
 
-    public LoginPage returnLogin(){
-        this.getTabBookTicket().click();
-        return new LoginPage();
-    }
-
-    public HomePage gotoHome(){
+    public void gotoHome(){
         this.getTabLogout().click();
-        return new HomePage();
     }
 
-    public BookTicketPage gotoBookTicketPage(){
+    public void gotoBookTicketPage(){
         this.getTabBookTicket().click();
-        return new BookTicketPage();
     }
-
-
-
-
-
-
-
-
 }

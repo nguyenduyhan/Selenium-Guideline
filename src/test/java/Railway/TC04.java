@@ -1,18 +1,22 @@
 package Railway;
 
-import Constant.Constant;
+import Common.Constant;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC04 extends BeforeAfter{
-    @Test
+public class TC04 extends TestBase {
+    @Test(description = "Use is redirected to Book ticket page after logging in" )
     public void TC04(){
-        System.out.println("Use is redirected to Book ticket page after logging in");
+        System.out.println("Step 1: Navigate to Book ticket page");
+        homePage.open();
+        homePage.gotoBookTicketPage();
 
-        String actualMsg = homePage.open().gotoBookTicketPage().gotoLoginPage()
-                .loginBookTicket(Constant.USERNAME, Constant.PASSWORD)
-                .returnLogin().getBookTicketTitleRedirect();
-        String expectedMsg = "Book ticket";
+        System.out.println("Step 2: Login");
+        loginPage.loginToBookTicket(Constant.USERNAME, Constant.PASSWORD);
+
+        System.out.println("Step 3: Verify check point");
+        String actualMsg = loginPage.getBookTicketTitleRedirect();
+        String expectedMsg = Constant.TITLEBOOKTICKET;
 
         Assert.assertEquals(actualMsg, expectedMsg, "Message");
     }

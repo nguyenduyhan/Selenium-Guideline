@@ -1,6 +1,6 @@
 package PageObjects;
 
-import Constant.Constant;
+import Common.Constant;
 
 public class HomePage extends GeneralPage {
     public HomePage open(){
