@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import Common.Constant;
 
 public class LoginPage extends GeneralPage{
-    private final By usernameField = By.xpath("//input[@id='username']");
-    private final By passwordField = By.xpath("//input[@id='password']");
+    private final By usernameField = By.id("username");
+    private final By passwordField = By.id("password");
     private final By buttonLogin = By.xpath("//input[@value='login']");
 
     public WebElement getUsername(){
