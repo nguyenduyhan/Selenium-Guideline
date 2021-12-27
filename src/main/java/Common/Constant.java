@@ -1,6 +1,7 @@
 package Common;
 
 import org.openqa.selenium.*;
+
 public class Constant {
     public static WebDriver WEBDRIVER;
     public static final String RAILWAY_URL = "http://www.railway.somee.com";
@@ -22,4 +23,6 @@ public class Constant {
     public static final String ERROR_PID_MESSAGE = "Invalid ID length";
     //change password confirm msg
     public static final String ERROR_CHANGEPASSWORD = "The password confirmation does not match the new password.";
+    //not activated account
+    public static final String ACCOUNT_NOT_ACTIVE = "Invalid username or password. Please try again.";
 }

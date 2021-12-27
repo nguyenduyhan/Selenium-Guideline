@@ -3,11 +3,11 @@ package Common;
 import java.util.Random;
 
 public class Utilities {
-    public static String getProjectPath(){
+    public static String getProjectPath() {
         return System.getProperty("user.dir");
     }
 
-    public static String generateRandomEmail(){
+    public static String generateRandomEmail() {
         String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         StringBuilder salt = new StringBuilder();
         Random rnd = new Random();
@@ -21,7 +21,7 @@ public class Utilities {
 
     public static String generateRandomPassword(int len) {
         String chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi"
-                +"jklmnopqrstuvwxyz!@#$%&";
+                + "jklmnopqrstuvwxyz!@#$%&";
         Random rnd = new Random();
         StringBuilder sb = new StringBuilder(len);
         for (int i = 0; i < len; i++)
@@ -29,17 +29,17 @@ public class Utilities {
         return sb.toString();
     }
 
-    public static String generateRandomPID(int len){
+    public static String generateRandomPID(int len) {
         String chars = "0123456789";
         Random random = new Random();
         StringBuilder stringBuilder = new StringBuilder(len);
-        for (int i = 0; i < len; i++){
+        for (int i = 0; i < len; i++) {
             stringBuilder.append(chars.charAt(random.nextInt(chars.length())));
         }
         return stringBuilder.toString();
     }
 
-    public static void main(String []args){
+    public static void main(String[] args) {
         System.out.println(getProjectPath());
         System.out.println(generateRandomEmail() + "@email.com");
         System.out.println(generateRandomPassword(10));

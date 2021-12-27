@@ -21,7 +21,8 @@ public class TC09 extends TestBase{
         ChangePasswordPage changePasswordPage = new ChangePasswordPage();
 
         System.out.println("Step 4: Enter information");
-        changePasswordPage.changeAccountPassword(Constant.PASSWORD, "a123:\"/{}!@$\\", "b456:\"/{}!@$\\");
+        changePasswordPage.changeAccountPassword(Constant.PASSWORD, "a123:\"/{}!@$\\",
+                "b456:\"/{}!@$\\");
 
         System.out.println("Step 5: Verify checkpoint");
         String actualMsg = homePage.getErrorChangePasswordConfirmMsg();
