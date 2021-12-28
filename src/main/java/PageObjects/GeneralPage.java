@@ -24,6 +24,7 @@ public class GeneralPage {
     //change password
     private final By tabChangePassword = By.xpath("//div[@id='menu']//a[@href='/Account/ChangePassword.cshtml']");
     private final By lblConfirmPasswordError = By.xpath("//label[contains(text(),'The password confirmation does not match the new p')]");
+    private final By lblConfirmPasswordError2 = By.xpath("//p[contains(text(),'Password change failed. Please correct the errors ')]");
 
     protected WebElement getTabLogin() {
         return Constant.WEBDRIVER.findElement(tabLogin);
@@ -89,6 +90,9 @@ public class GeneralPage {
     protected WebElement getLblChangePasswordConfirm(){
         return Constant.WEBDRIVER.findElement(lblConfirmPasswordError);
     }
+    protected WebElement getLblChangePasswordConfirmAbove(){
+        return Constant.WEBDRIVER.findElement(lblConfirmPasswordError2);
+    }
 
 
     public String getWelcomeMessage() {
@@ -135,6 +139,10 @@ public class GeneralPage {
     public String getErrorChangePasswordConfirmMsg(){
         return this.getLblChangePasswordConfirm().getText();
     }
+    public String getErrorChangePasswordConfirmMsg2(){
+        return this.getLblChangePasswordConfirmAbove().getText();
+    }
+    //end tc09
 
     public void gotoLoginPage() {
         this.getTabLogin().click();

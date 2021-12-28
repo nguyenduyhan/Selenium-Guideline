@@ -25,9 +25,12 @@ public class TC09 extends TestBase{
                 "b456:\"/{}!@$\\");
 
         System.out.println("Step 5: Verify checkpoint");
-        String actualMsg = homePage.getErrorChangePasswordConfirmMsg();
-        String expectedMsg = Constant.ERROR_CHANGEPASSWORD;
+        String actualMsg = homePage.getErrorChangePasswordConfirmMsg2();
+        String expectedMsg = Constant.ERROR_CHANGEPASSWORD2;
+        String actualMsg2 = homePage.getErrorChangePasswordConfirmMsg();
+        String expectedMsg2 = Constant.ERROR_CHANGEPASSWORD;
 
         Assert.assertEquals(actualMsg, expectedMsg, "Message");
+        Assert.assertEquals(actualMsg2, expectedMsg2, "Message");
     }
 }

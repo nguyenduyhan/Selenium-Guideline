@@ -17,7 +17,8 @@ public class TestBase {
     @BeforeMethod
     public void beforeMethod(){
         System.out.println("Pre-condition");
-        System.setProperty("webdriver.chrome.driver", Utilities.getProjectPath() + "\\src\\main\\resources\\Executables\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", Utilities.getProjectPath() +
+                "\\src\\main\\resources\\Executables\\chromedriver.exe");
         Constant.WEBDRIVER = new ChromeDriver();
         Constant.WEBDRIVER.manage().window().maximize();
     }

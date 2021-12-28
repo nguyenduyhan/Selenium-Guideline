@@ -5,8 +5,9 @@ import org.openqa.selenium.*;
 public class Constant {
     public static WebDriver WEBDRIVER;
     public static final String RAILWAY_URL = "http://www.railway.somee.com";
-    public static final String USERNAME = "thanhle@logigear.com";
-    public static final String PASSWORD = "12345678";
+//    public static final String RAILWAY_URL = "http://www.raillog.somee.com";
+    public static final String USERNAME = "hanplayboi99@gmail.com";
+    public static final String PASSWORD = "16021999Han";
     public static final String INVALID_PASSWORD = "87654321";
     public static final String TITLEBOOKTICKET = "Book ticket";
 
@@ -23,6 +24,7 @@ public class Constant {
     public static final String ERROR_PID_MESSAGE = "Invalid ID length";
     //change password confirm msg
     public static final String ERROR_CHANGEPASSWORD = "The password confirmation does not match the new password.";
+    public static final String ERROR_CHANGEPASSWORD2 = "Password change failed. Please correct the errors and try again.";
     //not activated account
     public static final String ACCOUNT_NOT_ACTIVE = "Invalid username or password. Please try again.";
 }
