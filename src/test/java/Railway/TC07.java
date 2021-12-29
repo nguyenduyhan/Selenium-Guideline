@@ -20,6 +20,6 @@ public class TC07 extends TestBase {
         String actualMsg = homePage.getRegisterSuccessMessage();
         String expectedMsg = Constant.REGISTER_CONFIRM;
 
-        Assert.assertEquals(actualMsg, expectedMsg, "Message");
+        Assert.assertEquals(actualMsg, expectedMsg, "Fail");
     }
 }

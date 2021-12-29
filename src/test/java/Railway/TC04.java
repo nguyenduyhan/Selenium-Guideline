@@ -18,6 +18,6 @@ public class TC04 extends TestBase {
         String actualMsg = loginPage.getBookTicketTitleRedirect();
         String expectedMsg = Constant.TITLEBOOKTICKET;
 
-        Assert.assertEquals(actualMsg, expectedMsg, "Message");
+        Assert.assertEquals(actualMsg, expectedMsg, "Fail");
     }
 }

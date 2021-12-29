@@ -18,6 +18,6 @@ public class TC03 extends TestBase {
         String actualMsg = homePage.getErrorInvalidPassword();
         String expectedMsg = "Invalid username or password. Please try again.";
 
-        Assert.assertEquals(actualMsg, expectedMsg, "Message");
+        Assert.assertEquals(actualMsg, expectedMsg, "Fail");
     }
 }

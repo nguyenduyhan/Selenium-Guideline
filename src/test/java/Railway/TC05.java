@@ -19,6 +19,6 @@ public class TC05 extends TestBase {
         String expectedMsg = "You have used 4 out of 5 login attempts. " +
                 "After all 5 have been used, you will be unable to login for 15 minutes";
 
-        Assert.assertEquals(actualMsg, expectedMsg, "Message");
+        Assert.assertEquals(actualMsg, expectedMsg, "Fail");
     }
 }

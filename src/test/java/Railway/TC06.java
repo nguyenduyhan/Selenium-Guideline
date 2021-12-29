@@ -19,6 +19,6 @@ public class TC06 extends TestBase {
         String actualMsg = homePage.getHomeTitleLogout();
         String expectedMsg = "Welcome to Safe Railway";
 
-        Assert.assertEquals(actualMsg, expectedMsg, "Message");
+        Assert.assertEquals(actualMsg, expectedMsg, "Fail");
     }
 }

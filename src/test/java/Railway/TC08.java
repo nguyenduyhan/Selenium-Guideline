@@ -18,6 +18,6 @@ public class TC08 extends TestBase{
         String actualMsg = homePage.getWelcomeMessage();
         String expectedMsg = Constant.ACCOUNT_NOT_ACTIVE;
 
-        Assert.assertEquals(actualMsg, expectedMsg, "Message");
+        Assert.assertEquals(actualMsg, expectedMsg, "Fail");
     }
 }

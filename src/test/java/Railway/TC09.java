@@ -30,7 +30,7 @@ public class TC09 extends TestBase{
         String actualMsg2 = homePage.getErrorChangePasswordConfirmMsg();
         String expectedMsg2 = Constant.ERROR_CHANGEPASSWORD;
 
-        Assert.assertEquals(actualMsg, expectedMsg, "Message");
-        Assert.assertEquals(actualMsg2, expectedMsg2, "Message");
+        Assert.assertEquals(actualMsg, expectedMsg, "Fail");
+        Assert.assertEquals(actualMsg2, expectedMsg2, "Fail");
     }
 }

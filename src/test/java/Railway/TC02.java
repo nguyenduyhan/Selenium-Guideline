@@ -19,6 +19,6 @@ public class TC02 extends TestBase {
         String actualMsg = homePage.getErrorWelcomeMessage();
         String expectedMsg = "You must specify a username.";
 
-        Assert.assertEquals(actualMsg, expectedMsg, "Message");
+        Assert.assertEquals(actualMsg, expectedMsg, "Fail");
     }
 }

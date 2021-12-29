@@ -20,7 +20,7 @@ public class TC10 extends TestBase {
         String actualMsg = homePage.getMessageEmailInUsed();
         String expectedMsg = Constant.ALREADY_USED_EMAIL;
 
-        Assert.assertEquals(actualMsg, expectedMsg, "Message");
+        Assert.assertEquals(actualMsg, expectedMsg, "Fail");
 
     }
 }
