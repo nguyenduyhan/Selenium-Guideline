@@ -13,13 +13,13 @@ public class TC07 extends TestBase {
         homePage.gotoRegisterPage();
 
         System.out.println("Step 2: Enter valid information");
-        registerPage.registerAccount(Utilities.generateRandomEmail() + "@email.com",
+        registerPage.registerAccount(Utilities.generateRandomEmail() + "@example.com",
                 Constant.NEWPS, Constant.NEWPSCF, Utilities.generateRandomPID(9));
 
         System.out.println("Step 3: Verify checkpoint");
         String actualMsg = homePage.getRegisterSuccessMessage();
         String expectedMsg = Constant.REGISTER_CONFIRM;
 
-        Assert.assertEquals(actualMsg, expectedMsg, "Fail");
+        Assert.assertEquals(actualMsg, expectedMsg);
     }
 }

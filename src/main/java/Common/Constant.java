@@ -4,12 +4,12 @@ import org.openqa.selenium.*;
 
 public class Constant {
     public static WebDriver WEBDRIVER;
-    public static final String RAILWAY_URL = "http://www.railway.somee.com";
+    public static final String RAILWAY_URL = "http://www.raillog.somee.com";
     public static final String USERNAME = "hanplayboi99@gmail.com";
-    public static final String PASSWORD = "16021999Han";
+    public static final String PASSWORD = "16021999";
     public static final String INVALID_PASSWORD = "87654321";
     public static final String TITLEBOOKTICKET = "Book ticket";
-
+    //tc8
     public static final String NEWUSERNAME = "email21@gmail.com";
     public static final String NEWPS = "10030110Pl";
     public static final String NEWPSCF = "10030110Pl";

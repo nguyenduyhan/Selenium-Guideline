@@ -7,7 +7,7 @@ import Common.Constant;
 public class LoginPage extends GeneralPage {
     private final By usernameField = By.id("username");
     private final By passwordField = By.id("password");
-    private final By buttonLogin = By.xpath("//input[@value='login']");
+    private final By buttonLogin = By.xpath("//input[@value='Login']");
 
     public WebElement getUsername() {
         return Constant.WEBDRIVER.findElement(usernameField);

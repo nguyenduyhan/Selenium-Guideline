@@ -5,9 +5,9 @@ import PageObjects.BookTicketPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC14 extends TestBase {
-    @Test(description = "User can book many tickets at a time", dataProviderClass = SetData.class, dataProvider = "dp")
-    public void TC14 (String data) throws InterruptedException {
+public class TC17 extends TestBase{
+    @Test(description = "User can't book more than 10 tickets", dataProviderClass = SetData.class, dataProvider = "dp2")
+    public void TC17 (String data) throws InterruptedException {
         String[] dataInfo = data.split(",");
         System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
@@ -37,9 +37,13 @@ public class TC14 extends TestBase {
         bookTicketPage.getTicketAmount(dataInfo[4]);
         bookTicketPage.getBtnBook();
 
-        String actualMsg = bookTicketPage.getMessageBook();
-        String expectedMsg = "Ticket Booked Successfully!";
+        String actualMsg1 = bookTicketPage.getErrorMessageTop();
+        String expectedMsg1 = "There're errors in the form. Please correct the errors and try again.";
 
-        Assert.assertEquals(actualMsg, expectedMsg);
+        String actualMsg2 = bookTicketPage.getErrorMessageSide();
+        String expectedMsg2 = "You have booked 10 tickets. You can book no more.";
+
+        Assert.assertEquals(actualMsg1, expectedMsg1);
+        Assert.assertEquals(actualMsg2, expectedMsg2);
     }
 }

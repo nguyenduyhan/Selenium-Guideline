@@ -2,9 +2,7 @@ package Railway;
 
 import Common.Constant;
 import Common.Utilities;
-import PageObjects.HomePage;
-import PageObjects.LoginPage;
-import PageObjects.RegisterPage;
+import PageObjects.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -13,6 +11,9 @@ public class TestBase {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
     RegisterPage registerPage = new RegisterPage();
+    MyTicketPage myTicketPage = new MyTicketPage();
+    TimeTablePage timeTablePage = new TimeTablePage();
+    TicketPricePage ticketPricePage = new TicketPricePage();
 
     @BeforeMethod
     public void beforeMethod(){

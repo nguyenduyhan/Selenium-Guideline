@@ -12,7 +12,7 @@ public class TC11 extends TestBase {
         homePage.open();
         homePage.gotoRegisterPage();
 
-        System.out.println("Input information as document");
+        System.out.println("Step 2: Input information as document");
         registerPage.registerAccount(Utilities.generateRandomEmail(), "", "", "");
 
         System.out.println("Step 3: Verify checkpoint");
@@ -24,9 +24,9 @@ public class TC11 extends TestBase {
         String expectedMsg2 = Constant.ERROR_PASSWORD_MSG;
         String expectedMsg3 = Constant.ERROR_PID_MESSAGE;
 
-        Assert.assertEquals(actualMsg1, expectedMsg1, "Fail");
-        Assert.assertEquals(actualMsg2, expectedMsg2, "Fail");
-        Assert.assertEquals(actualMsg3, expectedMsg3, "Fail");
+        Assert.assertEquals(actualMsg1, expectedMsg1);
+        Assert.assertEquals(actualMsg2, expectedMsg2);
+        Assert.assertEquals(actualMsg3, expectedMsg3);
 
     }
 }

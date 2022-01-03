@@ -18,6 +18,6 @@ public class TC01 extends TestBase {
         String actualMsg = homePage.getWelcomeMessage();
         String expectedMsg = "Welcome " + Constant.USERNAME;
 
-        Assert.assertEquals(actualMsg, expectedMsg, "Fail");
+        Assert.assertEquals(actualMsg, expectedMsg);
     }
 }
