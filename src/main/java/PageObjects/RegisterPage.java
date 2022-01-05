@@ -31,11 +31,11 @@ public class RegisterPage extends GeneralPage {
         return Constant.WEBDRIVER.findElement(registerButton);
     }
 
-    public void registerAccount(String username, String password, String confirmpassword, String pid) {
+    public void registerAccount(String username, String password, String confirmPassword, String pid) {
         this.getNewUsername().sendKeys(username);
         this.getNewPassword().sendKeys(password);
-        this.getPasswordConfirm().sendKeys(confirmpassword);
+        this.getPasswordConfirm().sendKeys(confirmPassword);
         this.getPidNumber().sendKeys(pid);
-        this.getRegisterBtn().submit();
+        this.getRegisterBtn().click();
     }
 }

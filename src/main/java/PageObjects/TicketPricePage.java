@@ -13,6 +13,13 @@ public class TicketPricePage extends GeneralPage{
     public final By stSB = By.xpath("//td[contains(text(),'SB')]");
     public final By stSBC = By.xpath("//td[contains(text(),'SBC')]");
 
+    String priceHS = "//td[contains(text(),'%s')]";
+    String priceSS = "//td[contains(text(),'%s')]";
+    String priceSSC = "//td[contains(text(),'%s')]";
+    String priceHB = "//td[contains(text(),'%s')]";
+    String priceSB = "//td[contains(text(),'%s')]";
+    String priceSBC = "//td[contains(text(),'%s')]";
+
     public WebElement getSeatTypeHS(){
         return Constant.WEBDRIVER.findElement(stHS);
     }
@@ -33,5 +40,24 @@ public class TicketPricePage extends GeneralPage{
     }
     public WebElement getTitlePrice(){
         return Constant.WEBDRIVER.findElement(getTitle);
+    }
+
+    public WebElement getHSPrice(String price){
+        return Constant.WEBDRIVER.findElement(By.xpath(String.format(priceHS, price)));
+    }
+    public WebElement getSSPrice(String price){
+        return Constant.WEBDRIVER.findElement(By.xpath(String.format(priceSS, price)));
+    }
+    public WebElement getSSCPrice(String price){
+        return Constant.WEBDRIVER.findElement(By.xpath(String.format(priceSSC, price)));
+    }
+    public WebElement getHBPrice(String price){
+        return Constant.WEBDRIVER.findElement(By.xpath(String.format(priceHB, price)));
+    }
+    public WebElement getSBPrice(String price){
+        return Constant.WEBDRIVER.findElement(By.xpath(String.format(priceSB, price)));
+    }
+    public WebElement getSBCPrice(String price){
+        return Constant.WEBDRIVER.findElement(By.xpath(String.format(priceSBC, price)));
     }
 }

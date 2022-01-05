@@ -7,16 +7,20 @@ public class Utilities {
         return System.getProperty("user.dir");
     }
 
-    public static String generateRandomEmail() {
+    public static String generateRandomString() {
         String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         StringBuilder salt = new StringBuilder();
         Random rnd = new Random();
-        while (salt.length() < 9) { // length of the random string.
+        while (salt.length() < 5) { // length of the random string.
             int index = (int) (rnd.nextFloat() * SALTCHARS.length());
             salt.append(SALTCHARS.charAt(index));
         }
         String saltStr = salt.toString().toLowerCase();
         return saltStr;
+    }
+
+    public static String generateRandomEmail(){
+        return generateRandomString() + System.currentTimeMillis() + "@example.com";
     }
 
     public static String generateRandomPassword(int len) {
@@ -41,7 +45,7 @@ public class Utilities {
 
     public static void main(String[] args) {
         System.out.println(getProjectPath());
-        System.out.println(generateRandomEmail() + "@email.com");
+        System.out.println(generateRandomEmail() + " length is: " + generateRandomEmail().length());
         System.out.println(generateRandomPassword(10));
         System.out.println(generateRandomPID(9));
     }

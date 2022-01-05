@@ -26,10 +26,10 @@ public class ChangePasswordPage extends GeneralPage {
         return Constant.WEBDRIVER.findElement(btnChangePassword);
     }
 
-    public void changeAccountPassword(String currentpassword, String newpassword, String confirmpassword) {
-        this.getCurrentPassword().sendKeys(currentpassword);
-        this.getNewPassword().sendKeys(newpassword);
-        this.getPasswordConfirm().sendKeys(confirmpassword);
-        this.getBtnChangePs().click();
+    public void changeAccountPassword(String currentPassword, String newPassword, String confirmPassword) {
+        this.getCurrentPassword().sendKeys(currentPassword);
+        this.getNewPassword().sendKeys(newPassword);
+        this.getPasswordConfirm().sendKeys(confirmPassword);
+        this.getBtnChangePs().submit();
     }
 }

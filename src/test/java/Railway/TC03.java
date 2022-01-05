@@ -1,10 +1,15 @@
 package Railway;
 
 import Common.Constant;
+import PageObjects.HomePage;
+import PageObjects.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC03 extends TestBase {
+    HomePage homePage = new HomePage();
+    LoginPage loginPage = new LoginPage();
+
     @Test(description = "User cannot log into Railway with invalid password")
     public void TC03() {
         System.out.println("Step 1: Navigate to Home");

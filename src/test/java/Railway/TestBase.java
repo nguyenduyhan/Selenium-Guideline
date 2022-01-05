@@ -8,13 +8,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class TestBase {
-    HomePage homePage = new HomePage();
-    LoginPage loginPage = new LoginPage();
-    RegisterPage registerPage = new RegisterPage();
-    MyTicketPage myTicketPage = new MyTicketPage();
-    TimeTablePage timeTablePage = new TimeTablePage();
-    TicketPricePage ticketPricePage = new TicketPricePage();
-
     @BeforeMethod
     public void beforeMethod(){
         System.out.println("Pre-condition");
@@ -23,6 +16,7 @@ public class TestBase {
         Constant.WEBDRIVER = new ChromeDriver();
         Constant.WEBDRIVER.manage().window().maximize();
     }
+
     @AfterMethod
     public void afterMethod(){
         System.out.println("Post-condition");

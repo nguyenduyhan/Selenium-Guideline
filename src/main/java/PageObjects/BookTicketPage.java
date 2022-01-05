@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 public class BookTicketPage {
     public final By btnBookTicket = By.xpath("//input[@value='Book ticket']");
     public final By lblBookSuccess = By.xpath("//h1[contains(text(),'Ticket Booked Successfully!')]");
-    public final By msgErrorTop = By.xpath("//p[contains(text(),\"There're errors in the form. Please correct the er\")]");
+    public final By msgErrorTop = By.xpath("//p[contains(text(), \"There're errors in the form. Please correct the errors and try again.\")]");
     public final By lblMsgErrorSide = By.xpath("//label[contains(text(),'You have booked 10 tickets. You can book no more.')]");
 
     protected WebElement getMsgBookSuccess(){

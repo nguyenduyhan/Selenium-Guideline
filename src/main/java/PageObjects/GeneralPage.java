@@ -14,7 +14,7 @@ public class GeneralPage {
     private final By invalidPasswordError = By.xpath("//p[contains(text(),'Invalid username or password. Please try again.')]");
     private final By backToHome = By.xpath("//h1[contains(text(),'Welcome to Safe Railway')]");
     private final By bookTicketTitle = By.xpath("//div//h1[contains(text(), 'Book ticket')]");
-    private final By registerSuccessMsg = By.xpath("//p[contains(text(),'Registration Confirmed! You can now log in to the ')]");
+    private final By registerSuccessMsg = By.xpath("//p[contains(text(),\"You're here\")]");
     private final By inUsedEmailAddress = By.xpath("//p[contains(text(),'This email address is already in use.')]");
     //create account with password and pid empty
     private final By msgError = By.xpath("//p[contains(text(),\"There're errors in the form. Please correct the er\")]");

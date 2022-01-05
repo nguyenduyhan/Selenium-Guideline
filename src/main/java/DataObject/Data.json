@@ -1,11 +1,25 @@
+
 {
-  "TC14": [
-    {
-      "DepartDate": "1/10/2022",
-      "DepartFrom": "Sài Gòn",
-      "ArriveAt": "Đà Nẵng",
-      "SeatType": "Hard seat",
-      "TicketAmount": "1"
-    }
-  ]
+  "TC14": {
+    "DepartDate": "1/10/2022",
+    "DepartFrom": "Sài Gòn",
+    "ArriveAt": "Đà Nẵng",
+    "SeatType": "Hard seat",
+    "TicketAmount": "1"
+  },
+  "TC17": {
+    "DepartDate": "1/10/2022",
+    "DepartFrom": "Sài Gòn",
+    "ArriveAt": "Huế",
+    "SeatType": "Soft seat",
+    "TicketAmount": "10"
+  },
+  "TC15": {
+    "HSPrice": "90000",
+    "SSPrice": "115000",
+    "SSCPrice": "140000",
+    "HBPrice": "190000",
+    "SBPrice": "240000",
+    "SBCPrice": "290000"
+  }
 }

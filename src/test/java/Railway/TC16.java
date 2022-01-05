@@ -1,11 +1,18 @@
 package Railway;
 
 import Common.Constant;
+import PageObjects.HomePage;
+import PageObjects.LoginPage;
+import PageObjects.MyTicketPage;
 import org.openqa.selenium.Alert;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC16 extends TestBase{
+    HomePage homePage = new HomePage();
+    LoginPage loginPage = new LoginPage();
+    MyTicketPage myTicketPage = new MyTicketPage();
+
     @Test(description = "User can cancel a ticket")
     public void TC16() {
         System.out.println("1. Navigate to QA Railway Website");
