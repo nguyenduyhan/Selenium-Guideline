@@ -1,8 +1,15 @@
 package Common;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 
 public class Utilities {
+    private final static java.text.SimpleDateFormat DATE_FORMAT = new java.text.SimpleDateFormat("M/dd/yyyy");
     public static String getProjectPath() {
         return System.getProperty("user.dir");
     }
@@ -43,10 +50,29 @@ public class Utilities {
         return stringBuilder.toString();
     }
 
+    public static String getTrainDate(){
+        LocalDate today = LocalDate.now();
+        LocalDate nextday = today.plusWeeks(1);
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        String firstTemp = nextday.format(dateFormat);
+        String[] secondTemp = firstTemp.split("/");
+        int month = Integer.parseInt(secondTemp[0]);
+        int day = Integer.parseInt(secondTemp[1]);
+        int year = Integer.parseInt(secondTemp[2]);
+        String dpDay = month + "/" + day + "/" + year;
+        return dpDay;
+    }
+
+    public static void waitDriver(By e){
+        WebDriverWait webDriverWait = new WebDriverWait(Constant.WEBDRIVER, 10);
+
+    }
+
     public static void main(String[] args) {
         System.out.println(getProjectPath());
         System.out.println(generateRandomEmail() + " length is: " + generateRandomEmail().length());
         System.out.println(generateRandomPassword(10));
         System.out.println(generateRandomPID(9));
+        System.out.println(getTrainDate());
     }
 }

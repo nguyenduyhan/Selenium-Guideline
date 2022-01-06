@@ -16,7 +16,7 @@ public class TC17 extends TestBase{
     LoginPage loginPage = new LoginPage();
 
     @Test(description = "User can't book more than 10 tickets", dataProvider = "data-provider")
-    public void TC17 (String departDate, String departFrom, String arriveAt, String seatType, String ticketAmount) throws InterruptedException {
+    public void TC17 (String departFrom, String arriveAt, String seatType, String ticketAmount) throws InterruptedException {
         System.out.println("1. Navigate to QA Railway Website");
         homePage.open();
         homePage.gotoLoginPage();
@@ -29,7 +29,7 @@ public class TC17 extends TestBase{
         BookTicketPage bookTicketPage = new BookTicketPage();
 
         System.out.println("4. Select a \"Depart date\" from the list");
-        bookTicketPage.getDepartDate(departDate);
+        bookTicketPage.getDepartDate(Utilities.getTrainDate());
 
         System.out.println("5. Select 'Depart From' ");
         bookTicketPage.getDepartFrom(departFrom);
@@ -59,15 +59,14 @@ public class TC17 extends TestBase{
     public Object[][] dataProvider(){
         String filePath = Utilities.getProjectPath() + "\\src\\main\\java\\DataObject\\Data.json";
         JsonObject jsonObject = JsonHelper.getJsonObject(filePath);
-        JsonObject dataTC14 = jsonObject.getAsJsonObject("TC17");
-        String departDate = dataTC14.get("DepartDate").getAsString();
-        String departFrom = dataTC14.get("DepartFrom").getAsString();
-        String arriveAt = dataTC14.get("ArriveAt").getAsString();
-        String seatType = dataTC14.get("SeatType").getAsString();
-        String ticketAmount = dataTC14.get("TicketAmount").getAsString();
+        JsonObject dataTC17 = jsonObject.getAsJsonObject("TC17");
+        String departFrom = dataTC17.get("DepartFrom").getAsString();
+        String arriveAt = dataTC17.get("ArriveAt").getAsString();
+        String seatType = dataTC17.get("SeatType").getAsString();
+        String ticketAmount = dataTC17.get("TicketAmount").getAsString();
 
         Object[][] object = new Object[][]{
-                {departDate, departFrom, arriveAt, seatType, ticketAmount}
+                {departFrom, arriveAt, seatType, ticketAmount}
         };
         return object;
     }

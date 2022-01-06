@@ -36,6 +36,6 @@ public class RegisterPage extends GeneralPage {
         this.getNewPassword().sendKeys(password);
         this.getPasswordConfirm().sendKeys(confirmPassword);
         this.getPidNumber().sendKeys(pid);
-        this.getRegisterBtn().click();
+        this.getRegisterBtn().submit();
     }
 }

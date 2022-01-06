@@ -17,7 +17,7 @@ public class GeneralPage {
     private final By registerSuccessMsg = By.xpath("//p[contains(text(),\"You're here\")]");
     private final By inUsedEmailAddress = By.xpath("//p[contains(text(),'This email address is already in use.')]");
     //create account with password and pid empty
-    private final By msgError = By.xpath("//p[contains(text(),\"There're errors in the form. Please correct the er\")]");
+    private final By lblMsgError = By.xpath("//p[contains(text(),\"There're errors in the form. Please correct the er\")]");
     private final By lblPsMsgError = By.xpath("//label[contains(text(),'Invalid password length')]");
     private final By lblPsConfirmMsgError = By.xpath("//label[contains(text(),'The two passwords do not match')]");
     private final By lblPidMsgError = By.xpath("//label[contains(text(),'Invalid ID length')]");
@@ -77,7 +77,7 @@ public class GeneralPage {
 
     //create account with password and pid are empty
     protected WebElement getMessageError() {
-        return Constant.WEBDRIVER.findElement(msgError);
+        return Constant.WEBDRIVER.findElement(lblMsgError);
     }
 
     protected WebElement getLblPsMsgError() {

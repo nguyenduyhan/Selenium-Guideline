@@ -7,7 +7,7 @@ import Common.Constant;
 public class LoginPage extends GeneralPage {
     private final By usernameField = By.id("username");
     private final By passwordField = By.id("password");
-    private final By buttonLogin = By.xpath("//input[@value='Login']");
+    private final By btnLogin = By.xpath("//input[@value='Login']");
 
     public WebElement getUsername() {
         return Constant.WEBDRIVER.findElement(usernameField);
@@ -18,7 +18,7 @@ public class LoginPage extends GeneralPage {
     }
 
     public WebElement getButtonLogin() {
-        return Constant.WEBDRIVER.findElement(buttonLogin);
+        return Constant.WEBDRIVER.findElement(btnLogin);
     }
 
     public void login(String username, String password) {
