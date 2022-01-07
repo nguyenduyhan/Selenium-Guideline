@@ -5,7 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class BookTicketPage {
+public class BookTicketPage extends GeneralPage{
+    HomePage homePage = new HomePage();
+    MyTicketPage myTicketPage = new MyTicketPage();
+
     public final By btnBookTicket = By.xpath("//input[@value='Book ticket']");
     public final By lblBookSuccess = By.xpath("//h1[contains(text(),'Ticket Booked Successfully!')]");
     public final By lblMsgErrorTop = By.xpath("//p[contains(text(), \"There're errors in the form. Please correct the errors and try again.\")]");
@@ -56,5 +59,17 @@ public class BookTicketPage {
     }
     public String getErrorMessageSide(){
         return this.getLblMsgError().getText();
+    }
+
+    public void bookMultiple(String departDate, String departFrom, String arriveAt, String seatType, String ticketAmount, int times){
+        for (int i = 0; i < times; i++){
+            this.getDepartDate(departDate);
+            this.getDepartFrom(departFrom);
+            this.getArriveAt(arriveAt);
+            this.getSeatType(seatType);
+            this.getTicketAmount(ticketAmount);
+            this.getBtnBook();
+            homePage.gotoBookTicketPage();
+        }
     }
 }

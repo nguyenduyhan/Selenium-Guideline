@@ -2,8 +2,13 @@
 
 <suite name="Suite1" verbose="1" >
     <test name="Railway">
-        <packages>
-            <package name="Railway"/>
-        </packages>
+<!--        <packages>-->
+<!--            <package name="Railway"/>-->
+<!--        </packages>-->
+        <classes>
+            <class name="Railway.FTTC101" />
+            <class name="Railway.FTTC102" />
+            <class name="Railway.FTTC103" />
+        </classes>
     </test>
 </suite>
